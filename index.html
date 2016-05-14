@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>FLIPSIDE</title>
+    <title>FLIPSIDE - Reviews From The Other Side</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -24,12 +24,55 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
 
-    <h1>FLIPSIDE</h1>
-    <div id="main">
-    	<form action="">
-    		Search: <input type="text" />
-    		<input type="submit" value="Flip it!" />
-    	</form>
+    <div id="wrapper">
+        <div id="banner">
+            <img src="assets/logo.png" id="logo" height="130px" />
+        	<form action="">
+        		<input type="text" value="Insert URL of reviews..." />
+        		<input type="submit" value="FLIP IT" />
+        	</form>
+        </div>
+
+        <div id="main">
+            <div id="title">
+                <div id="info">
+                    <h1>Tian Tian Hainanese Chicken Rice</h1>
+                    <h4>170 Reviews</h4>
+                </div>
+
+                <div id="search">
+                    <form action="">
+                		<input type="text" value="Keyword" />
+                	</form>
+                </div>
+            </div>
+
+            <div id="reviews">
+                <div id="positive">
+                    <img src="assets/positive-icon.png" height="100px" />
+                    <h3>Top Positive Reviews</h3>
+
+                    <div>
+                        Picture
+                        Name
+                        Location
+                        Review body
+                    </div>
+                </div>
+
+                <div id="negative">
+                    <img src="assets/negative-icon.png" height="100px" />
+                    <h3>Top Negative Reviews</h3>
+
+                    <div>
+                        Picture
+                        Name
+                        Location
+                        Review body
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
