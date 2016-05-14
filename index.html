@@ -23,6 +23,10 @@
     <script src="js/jquery-2.2.3.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
+
+    <!--Angular-->
+    <script src="js/script.js"></script>
 
     <div id="wrapper" class="container">
         <div id="banner" class="row">
@@ -102,6 +106,13 @@
 
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!--usage example here, use it to iterate review-->
+    <div class="testing" ng-app="flipIt" ng-controller="flipitController">
+        <div ng-repeat="d in data">
+            {{d.id}}
         </div>
     </div>
 </body>
