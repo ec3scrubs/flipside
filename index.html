@@ -28,55 +28,78 @@
         <div id="banner" class="row">
             <div class="col-xs-8 col-xs-offset-2">
                 <img src="assets/logo.png" class="img-block" id="logo" />
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2">
-                    <!-- todo -->
-                    <span class="input-group-addon" id="basic-addon2">Flip it</span>
+                <div class="flex">
+                    <input type="text" id="url-query" class="flex-child" style="flex: 4;">
+                    <button class="flex-child flip-it-button">Flip it</button>
                 </div>
             </div>
         </div>
 
         <div id="main" class="container row">
             <div id="title" class="row">
-                <div id="info" class="col-xs-8 vcenter">
+                <div id="info" class="col-xs-8">
                     <h1>Tian Tian Hainanese Chicken Rice</h1>
-                    <h4>170 Reviews</h4>
+                    <h4><em>170 Reviews</em></h4>
                 </div>
 
-                <div id="search" class="col-xs-4 vcenter">
-                    <form action="">
-                		<input type="text" placeholder="keyword" class="form-control" />
-                	</form>
+                <div id="search" class="col-xs-4">
+                    <div class="form-group has-feedback">
+                        <input type="text" class="form-control" id="" placeholder="Search" />
+                        <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                    </div>
                 </div>
             </div>
 
-            <div id="reviews-container" class="row">
-                <div id="positive" class="col-xs-6 reviews">
+            <div id="reviews-container" class="row flex">
+                <div id="positive" class="reviews flex-child">
                     <div class="review-header text-center">
                         <img src="assets/positive-icon.png" height="100px" />
                         <h3>Top Positive Reviews</h3>
                     </div>
 
                     <div class="review-content">
-                        Picture
-                        Name
-                        Location
-                        Review body
+                        <div>
+                            <img src="assets/avatars/avatar-1.jpg" alt="" class="reviewer-profile-pic round-thumbnail" />
+                            <span class="vcenter">
+                                <span class="name">Name</span>
+                                <br />
+                                San Francisco, CA
+                            </span>
+                        </div>
+                        <div class="review-body">Review body</div>
                     </div>
                 </div>
 
-                <div id="negative" class="col-xs-6 reviews">
+                <div id="negative" class="reviews flex-child">
                     <div class="review-header text-center">
                         <img src="assets/negative-icon.png" height="100px" />
                         <h3>Top Negative Reviews</h3>
                     </div>
 
                     <div class="review-content">
-                        Picture
-                        Name
-                        Location
-                        Review body
+                        <div>
+                            <img src="assets/avatars/avatar-1.jpg" alt="" class="reviewer-profile-pic round-thumbnail" />
+                            <span class="vcenter">
+                                <span class="name">Name</span>
+                                <br />
+                                San Francisco, CA
+                            </span>
+                        </div>
+                        <div class="review-body">Review body</div>
                     </div>
+
+                    <div class="review-content">
+                        <div>
+                            <img src="assets/avatars/avatar-3.jpg" alt="" class="reviewer-profile-pic round-thumbnail" />
+                            <span class="vcenter">
+                                <span class="name">Name</span>
+                                <br />
+                                San Francisco, CA
+                            </span>
+                        </div>
+                        <div class="review-body">Review body</div>
+                    </div>
+
                 </div>
             </div>
         </div>

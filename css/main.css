@@ -1,6 +1,6 @@
 #main {
   margin-top: 1em;
-  border : solid 1px;
+  border : solid 1px #CCC;
 }
 
 .img-block {
@@ -8,8 +8,39 @@
   margin : auto;
 }
 
+/* flexbox implementation because bootstrap no support */
+.flex {
+  display: flex;
+}
+
+.flex-child {
+  flex: 1;
+}
+
+.flex-vertical {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.flip-it-button {
+  background: #13988A;
+  color: #FFF;
+  text-transform : uppercase;
+  border: none;
+}
+
+#url-query {
+  background: #CCC;
+  border: none;
+  text-align: center;
+}
+
 #logo {
   height : 130px;
+}
+
+#banner {
+  margin-bottom: 40px;
 }
 
 #title {
@@ -23,17 +54,37 @@
 
 /* reviews */
 .reviews {
-  border: solid 1px;
+  border: solid 1px #CCC;
+  padding: 0 1em;
 }
 
 .review-header > * {
   display: inline-block;
 }
 
-#positive > .name {
-  color: ;
+.review-content {
+  margin : 15px 0;
 }
 
-#positive > .name {
-  color: ;
+.vcenter {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.round-thumbnail {
+  width: 50px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.name {
+  font-weight : 700;
+}
+
+#positive .name {
+  color: #13988A;
+}
+
+#negative .name {
+  color: #F05355;
 }
