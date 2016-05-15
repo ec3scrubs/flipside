@@ -7,6 +7,9 @@ flipIt.service('rest_api', function($http) {
       method: 'GET',
       url: 'http://localhost:5000/sentiment/api/'
     });
+  },
+  this.sendQuery = function(query) {
+    return $http.post('http://localhost:5000/' + query);
   }
 });
 
@@ -33,4 +36,14 @@ flipIt.controller('flipitController', function($scope, rest_api) {
     }
   ];
   $scope.data = dummy;
+
+  $scope.httpPost = function() {
+    console.log("angular posting");
+    var postData = $("#angular-search-field").val();
+    //console.log($scope.postData)
+    // may need to stringify
+    var results = rest_api.sendQuery(postData);
+    console.log(results);
+  }
+
 });

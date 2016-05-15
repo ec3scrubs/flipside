@@ -119,6 +119,13 @@
         <div ng-repeat="d in data">
             {{d.id}}
         </div>
+        <form id="formmm" name="formmm" ng-submit="httpPost()">
+            <div class="form-group has-feedback">
+                <input type="text" class="form-control" id="angular-search-field" placeholder="Search" /> <!--post request or static data here-->
+                <input type="submit" style="display: none;" />
+                <span class="glyphicon glyphicon-search form-control-feedback"></span>
+            </div>
+        </form>
     </div>
 </body>
 </html>

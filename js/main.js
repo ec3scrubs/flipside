@@ -2,7 +2,7 @@ $(document).ready(function(){
   $("#query-search-form").bind('submit', function (e) {
     formData = $('#searchTerm').val();
     console.log(formData);
-    jQuery.ajax({
+    $.ajax({
       type: "POST",
       url: "url",
       dataType: "json",
