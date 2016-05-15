@@ -74,6 +74,10 @@
   padding: 0 1em;
 }
 
+.review-header {
+  margin: 1em;
+}
+
 .review-header > * {
   display: inline-block;
 }
@@ -117,5 +121,5 @@
 }
 
 #positive h3, #negative h3 {
-    padding-top: 10px;
+
 }

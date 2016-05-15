@@ -39,7 +39,12 @@ flipIt.controller('flipitController', function($scope, rest_api) {
       'score': '-0.9'
     }
   ];
-  $scope.data = dummy;
+
+  var positiveScores = _.filter(dummy, function(x) { return parseFloat(x.score) > 0.0 });
+  var negativeScores = _.filter(dummy, function(x) { return parseFloat(x.score) <= 0.0 });
+  console.log(positiveScores);
+  $scope.posdata = positiveScores;
+  $scope.negdata = negativeScores;
 
   $scope.httpPost = function() {
     console.log("angular posting");
@@ -51,6 +56,19 @@ flipIt.controller('flipitController', function($scope, rest_api) {
   }
 
 });
+
+var resultFilter = function(results) {
+  var positive = [];
+  var negative = [];
+  var lo = 0;
+  for (i=0; i<results.length; i++) {
+    if (results[i].score < lo) {
+      negative.push(results[i]);
+    } else {
+      positive.push(results[i]);
+    }
+  }
+}
 
 // stackoverflow ftw
 function shuffle(array) {

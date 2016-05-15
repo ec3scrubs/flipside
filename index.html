@@ -24,13 +24,13 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <script src="js/angular.min.js"></script>
-
+    <script src="js/lodash.core.min.js"></script>
     <!--Angular-->
     <script src="js/script.js"></script>
 
     <script src="js/main.js"></script>
 
-    <div id="wrapper" class="container">
+    <div id="wrapper" class="container" ng-app="flipIt" ng-controller="flipitController">
         <div id="banner" class="row">
             <div class="col-xs-8 col-xs-offset-2">
                 <img src="assets/logo.png" class="img-block" id="logo" />
@@ -49,7 +49,7 @@
                 </div>
 
                 <div id="search" class="col-xs-4">
-                    <form action="" id="query-search-form" name="query-search-form">
+                    <form id="query-search-form" name="query-search-form" ng-submit="httpPost()">
                         <div class="form-group has-feedback">
                             <input type="text" name="searchTerm" class="form-control" id="searchTerm" placeholder="Search" /> <!--post request or static data here-->
                             <input type="submit" style="display: none;" />
@@ -66,7 +66,7 @@
                         <h3>Top Positive Reviews</h3>
                     </div>
 
-                    <div class="review-content">
+                    <!-- <div class="review-content">
                         <div>
                             <img src="assets/avatars/avatar-1.jpg" alt="" class="reviewer-profile-pic round-thumbnail" />
                             <span class="vcenter">
@@ -76,6 +76,18 @@
                             </span>
                         </div>
                         <div class="review-body">Review body</div>
+                    </div> -->
+                    <div class="review-content" ng-repeat="d in posdata">
+                        <div>
+                            <img src="assets/avatars/avatar-1.jpg" alt="" class="reviewer-profile-pic round-thumbnail" />
+                            <span class="vcenter">
+                                <span class="name">{{d.name}}</span>
+                                <br />
+                                {{d.location}}
+                            </span>
+                            <div class="pull-right"><h3>{{d.score * 100}}</h3></div>
+                        </div>
+                        <div class="review-body">{{d.review}}</div>
                     </div>
                 </div>
 
@@ -85,28 +97,17 @@
                         <h3>Top Negative Reviews</h3>
                     </div>
 
-                    <div class="review-content">
+                    <div class="review-content" ng-repeat="d in negdata">
                         <div>
                             <img src="assets/avatars/avatar-1.jpg" alt="" class="reviewer-profile-pic round-thumbnail" />
                             <span class="vcenter">
-                                <span class="name">Name</span>
+                                <span class="name">{{d.name}}</span>
                                 <br />
-                                San Francisco, CA
+                                {{d.location}}
                             </span>
+                            <div class="pull-right"><h3>{{d.score * 100}}</h3></div>
                         </div>
-                        <div class="review-body">Review body</div>
-                    </div>
-
-                    <div class="review-content">
-                        <div>
-                            <img src="assets/avatars/avatar-3.jpg" alt="" class="reviewer-profile-pic round-thumbnail" />
-                            <span class="vcenter">
-                                <span class="name">Name</span>
-                                <br />
-                                San Francisco, CA
-                            </span>
-                        </div>
-                        <div class="review-body">Review body</div>
+                        <div class="review-body">{{d.review}}</div>
                     </div>
 
                 </div>
@@ -115,7 +116,7 @@
     </div>
 
     <!--usage example here, use it to iterate review-->
-    <div class="testing" ng-app="flipIt" ng-controller="flipitController">
+<!--     <div class="testing" ng-app="flipIt" ng-controller="flipitController">
         <div ng-repeat="d in data">
             {{d.sentiment}}
             {{d.name}}
@@ -124,11 +125,11 @@
         </div>
         <form id="formmm" name="formmm" ng-submit="httpPost()">
             <div class="form-group has-feedback">
-                <input type="text" class="form-control" id="angular-search-field" placeholder="Search" /> <!--post request or static data here-->
+                <input type="text" class="form-control" id="angular-search-field" placeholder="Search" />
                 <input type="submit" style="display: none;" />
                 <span class="glyphicon glyphicon-search form-control-feedback"></span>
             </div>
         </form>
-    </div>
+    </div> -->
 </body>
 </html>
