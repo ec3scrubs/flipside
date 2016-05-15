@@ -1,6 +1,6 @@
 #main {
   margin-top: 1em;
-  border : solid 1px #CCC;
+  border : solid 1px #EEE;
 }
 
 .img-block {
@@ -30,9 +30,15 @@
 }
 
 #url-query {
-  background: #CCC;
+  background: #EEE;
   border: none;
-  text-align: center;
+  text-align: left;
+  padding: 10px;
+}
+
+.flip-it-button, #url-query {
+  height: 45px;
+  font-size: 20px;
 }
 
 #logo {
@@ -44,7 +50,17 @@
 }
 
 #title {
-  background-color: #CCC;
+  background-color: #EEE;
+  padding-bottom: 10px;
+}
+
+#title h1 {
+  font-size: 32px;
+  color: #666;
+}
+
+#title h4 {
+  color: #666;
 }
 
 #search {
@@ -54,7 +70,7 @@
 
 /* reviews */
 .reviews {
-  border: solid 1px #CCC;
+  border: solid 1px #EEE;
   padding: 0 1em;
 }
 
@@ -64,6 +80,15 @@
 
 .review-content {
   margin : 15px 0;
+}
+
+.reviewer-profile-pic {
+  margin-right: 8px;
+}
+
+.review-body {
+  margin-top: 10px;
+  margin-bottom: 25px;
 }
 
 .vcenter {
@@ -77,14 +102,20 @@
   vertical-align: middle;
 }
 
-.name {
+#positive .name, #positive h3 {
+  color: #13988A;
   font-weight : 700;
 }
 
-#positive .name {
-  color: #13988A;
+#negative .name, #negative h3 {
+  color: #F05355;
+  font-weight : 700;
 }
 
-#negative .name {
-  color: #F05355;
+.name {
+  font-size: 18px;
+}
+
+#positive h3, #negative h3 {
+    padding-top: 10px;
 }
