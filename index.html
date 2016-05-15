@@ -28,12 +28,14 @@
     <!--Angular-->
     <script src="js/script.js"></script>
 
+    <script src="js/main.js"></script>
+
     <div id="wrapper" class="container">
         <div id="banner" class="row">
             <div class="col-xs-8 col-xs-offset-2">
                 <img src="assets/logo.png" class="img-block" id="logo" />
                 <div class="flex">
-                    <input type="text" id="url-query" class="flex-child" style="flex: 4;">
+                    <input type="text" id="url-query" class="flex-child" style="height: 55px; flex: 4;">
                     <button class="flex-child flip-it-button">Flip it</button>
                 </div>
             </div>
@@ -47,9 +49,10 @@
                 </div>
 
                 <div id="search" class="col-xs-4">
-                    <form action="">
+                    <form action="" id="query-search-form" name="query-search-form">
                         <div class="form-group has-feedback">
-                            <input type="text" class="form-control" id="" placeholder="Search" onsubmit="alert('yay')" /> <!--post request or static data here-->
+                            <input type="text" name="searchTerm" class="form-control" id="searchTerm" placeholder="Search" /> <!--post request or static data here-->
+                            <input type="submit" style="display: none;" />
                             <span class="glyphicon glyphicon-search form-control-feedback"></span>
                         </div>
                     </form>
