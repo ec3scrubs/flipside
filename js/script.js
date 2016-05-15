@@ -39,9 +39,33 @@ flipIt.controller('flipitController', function($scope, rest_api) {
   $scope.data = dummy;
 });
 
+// stackoverflow ftw
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+
+var avatars = [1, 2, 3, 4, 5, 6];
+shuffle(avatars);
+
 window.onload = function() {
   $('.reviewer-profile-pic').each(function(i, obj) {
-    var randNum = Math.ceil(Math.random() * 6);
+    //var randNum = Math.ceil(Math.random() * 6);
+    var randNum = avatars.pop();
     var source = "assets/avatars/avatar-" + randNum + ".jpg";
     $(obj).attr("src", source);
   });
