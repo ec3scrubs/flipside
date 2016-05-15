@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $("#query-search-form").bind('submit', function (e) {
+  /*$("#query-search-form").bind('submit', function (e) {
     formData = $('#searchTerm').val();
     console.log(formData);
     $.ajax({
@@ -13,5 +13,5 @@ $(document).ready(function(){
     });
     e.preventDefault();
     return false;
-  });
+  });*/
 });

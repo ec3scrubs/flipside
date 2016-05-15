@@ -9,7 +9,13 @@ flipIt.service('rest_api', function($http) {
     });
   },
   this.sendQuery = function(query) {
-    return $http.post('http://localhost:5000/' + query);
+    console.log(query);
+    //return $http.post('http://localhost:5000/sentiment/api/query' + query);
+    return $http({
+      method: 'POST',
+      url: 'http://localhost:5000/sentiment/api/query',
+      data : {'param' : query}
+    });
   }
 });
 
@@ -40,9 +46,12 @@ flipIt.controller('flipitController', function($scope, rest_api) {
     }
   ];
 
-  var positiveScores = _.filter(dummy, function(x) { return parseFloat(x.score) > 0.0 });
-  var negativeScores = _.filter(dummy, function(x) { return parseFloat(x.score) <= 0.0 });
-  console.log(positiveScores);
+  var dummydata = [{'rating': '5.0', 'sentiment_score': 0.822182975408912, 'type': 'good', 'description': "The line's always pretty long, but this is probably the best chicken rice for the price. If you're not up for waiting, I personally think the other chicken rice stalls in the area serve comparable fare."}, {'rating': '4.0', 'sentiment_score': 0.6962662464771089, 'type': 'bad', 'description': 'Very good chicken rice here. Try the half chicken and rice. Be sure not to let the cool chicken broth with the half chicken go to waste. I think it tastes best poured onto the rice. Love the garlic chili sauce.\n'}]
+;
+
+  var positiveScores = _.filter(dummydata, function(x) { return parseFloat(x.rating) > 0.0 });
+  var negativeScores = _.filter(dummydata, function(x) { return parseFloat(x.rating) <= 0.0 });
+  //console.log(positiveScores);
   $scope.posdata = positiveScores;
   $scope.negdata = negativeScores;
 
