@@ -117,7 +117,10 @@
     <!--usage example here, use it to iterate review-->
     <div class="testing" ng-app="flipIt" ng-controller="flipitController">
         <div ng-repeat="d in data">
-            {{d.id}}
+            {{d.sentiment}}
+            {{d.name}}
+            {{d.location}}
+            {{d.review}}
         </div>
     </div>
 </body>

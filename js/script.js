@@ -19,18 +19,30 @@ flipIt.controller('flipitController', function($scope, rest_api) {
   var dummy = [
     {
       'id': 1,
+      'name': 'This is my name',
       'date': '19-05-2015',
-      'description': 'ate food',
+      'location': 'Your house',
+      'review': 'Food is best',
       'sentiment': 'positive',
       'score': '0.5'
     },
     {
       'id': 2,
+      'name': 'Dog',
       'date': '20-05-2015',
-      'description': 'failed all the exams rofl',
+      'location': 'My room',
+      'review': 'Horrible service',
       'sentiment': 'negative',
       'score': '-0.9'
     }
   ];
   $scope.data = dummy;
 });
+
+window.onload = function() {
+  $('.reviewer-profile-pic').each(function(i, obj) {
+    var randNum = Math.ceil(Math.random() * 6);
+    var source = "assets/avatars/avatar-" + randNum + ".jpg";
+    $(obj).attr("src", source);
+  });
+};
